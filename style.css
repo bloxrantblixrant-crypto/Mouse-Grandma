@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body { 
+    margin: 0; 
+    overflow: hidden; 
+    background: #000; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    touch-action: none; 
+}
+
+#canvas-container { 
+    width: 100vw; 
+    height: 100vh; 
+}
+
+/* Loading Screen */
+#loading-screen {
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: #111;
+    color: #ffcc00;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: opacity 0.5s ease;
+}
+
+.loader {
+    border: 8px solid #333;
+    border-top: 8px solid #ffcc00;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-top: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Main Menu */
+#main-menu {
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    text-align: center;
+}
+
+#main-menu h1 {
+    font-size: 42px;
+    color: #ff9900;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px #000;
+}
+
+#play-btn {
+    padding: 15px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-top: 20px;
+}
+
+/* UI Overlay */
+#ui { 
+    position: absolute; 
+    top: 15px; 
+    left: 15px; 
+    color: white; 
+    font-size: 20px; 
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000; 
+    pointer-events: none; 
+    display: none;
+}
+
+#game-over { 
+    display: none; 
+    position: absolute; 
+    top: 0; left: 0; width: 100vw; height: 100vh; 
+    background: rgba(200, 0, 0, 0.8); 
+    color: white; 
+    font-size: 48px; 
+    font-weight: bold; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    z-index: 50;
+}
+
+/* Mobile Controls */
+#joystick-zone { 
+    position: absolute; 
+    bottom: 30px; 
+    left: 30px; 
+    width: 120px; 
+    height: 120px; 
+    background: rgba(255,255,255,0.25); 
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 50%; 
+    display: none;
+}
+
+#joystick-knob { 
+    position: absolute; 
+    top: 35px; 
+    left: 35px; 
+    width: 50px; 
+    height: 50px; 
+    background: rgba(255,255,255,0.8); 
+    border-radius: 50%; 
+}
+
+#paint-btn { 
+    position: absolute; 
+    bottom: 35px; 
+    right: 35px; 
+    width: 80px; 
+    height: 80px; 
+    background: #ff9900; 
+    border-radius: 50%; 
+    color: white; 
+    font-weight: bold; 
+    border: 3px solid white; 
+    font-size: 16px; 
+    display: none;
+}
